@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			#txt{width: 300px; height: 100px; border: 1px solid black;
+			font-size: 20px; text-align: center;}
+		</style>
+		<script>
+			var stu_arr = [{"stuNum":1,"first_name":"Jude","email":"jfrancey0@skyrock.com","gender":"Male","ip_address":"250.215.69.37"},
+{"stuNum":2,"first_name":"Pate","email":"psemmens1@skype.com","gender":"Male","ip_address":"3.125.233.119"},
+{"stuNum":3,"first_name":"Bartholomeo","email":"bchafney2@google.pl","gender":"Male","ip_address":"204.251.162.176"},
+{"stuNum":4,"first_name":"Waldo","email":"wsidlow3@wiley.com","gender":"Male","ip_address":"42.94.152.91"},
+{"stuNum":5,"first_name":"Christie","email":"cbrimelow4@icio.us","gender":"Male","ip_address":"172.30.152.169"},
+{"stuNum":6,"first_name":"Cherry","email":"ojarrad5@dropbox.com","gender":"Polygender","ip_address":"159.242.42.244"},
+{"stuNum":7,"first_name":"Molli","email":"mfills6@ted.com","gender":"Female","ip_address":"193.53.208.248"},
+{"stuNum":8,"first_name":"Decca","email":"ddellow7@4shared.com","gender":"Male","ip_address":"116.5.96.243"},
+{"stuNum":9,"first_name":"Maryjo","email":"mbruty8@people.com.cn","gender":"Female","ip_address":"158.36.26.107"},
+{"stuNum":10,"first_name":"Melli","email":"mmacdonald9@theatlantic.com","gender":"Female","ip_address":"236.58.202.252"}]
+			function arr_print()
+
+				console.log(stu_arr[0]);
+				$("#txt").text(stu_arr[0].first_name+","+stu_arr[0].ip_address+","+stu_arr[0].email+","+stu_arr[0].gender);
+			
+			function btn(){
+				//input박스의 이름을 가져옴.
+				var name = $("#name").val();
+				var sch_student = stu_arr.filter((stu)=>{
+					return stu.first_name == name;
+				});
+				
+				alert("검색되었습니다.");
+				console.log(sch_student);
+				$("#txt").text(sch_student);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>명단</h1>
+		<input type="button" onclick="arr_print()" value="불러오기">
+		<br>
+		<input type="text" name="name" id="name">
+		<input type="button" onclick="btn()" value="검색">
+		<br>
+		<div id="txt">
+			<!-- 1번학생정보가 들어옴. -->
+		</div>
+	
+	</body>
+</html>
